@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Polygon Arrays</title>
+     <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/magnific-popup.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        font-family:"Montserrat", sans-serif;
+      }
+      .box {
+        background-color:#2b2d35;
+        padding:20px;
+        font-size:22px;
+        font-weight:bold;
+        color:white;
+        height:200px;
+        width:400px;
+        border-color:white;
+        border:4px;
+        margin:2px;
+        border:2px solid #DDD;
+        font-family:"Montserrat", sans-serif;
+        line-height:0.9em;
+      }
+      .btn {
+        margin-top:15px;
+        margin-bottom:14px;
+        background-color:#13dd93;
+        color:black;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+// This example creates a simple polygon representing the Bermuda Triangle.
+// When the user clicks on the polygon an info window opens, showing
+// information about the polygon's coordinates.
+
+var map;
+var infoWindow;
+
+function initialize() {
+  var mapOptions = {
+    zoom: 13,
+    center: new google.maps.LatLng(37.774929, -122.419416),
+    mapTypeId: google.maps.MapTypeId.TERRAIN
+  };
+
+  var bermudaTriangle;
+
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+  // Define the LatLng coordinates for the polygon.
+  var triangleCoords = [
+      new google.maps.LatLng(37.79245632123354, -122.40593433380127),
+      new google.maps.LatLng(37.79301588752816, -122.40119218826294),
+      new google.maps.LatLng(37.789861913040816, -122.4005913734436),
+      new google.maps.LatLng(37.78945493878432, -122.40541934967041)
+  ];
+
+  // Construct the polygon.
+  bermudaTriangle = new google.maps.Polygon({
+    paths: triangleCoords,
+    strokeColor: '#13dd93',
+    strokeOpacity: 0.8,
+    strokeWeight: 3,
+    fillColor: '#000000',
+    fillOpacity: 0.35,
+  });
+
+  bermudaTriangle.setMap(map);
+
+  // Add a listener for the click event.
+  google.maps.event.addListener(bermudaTriangle, 'click', showArrays);
+
+  infoWindow = new google.maps.InfoWindow();
+}
+
+/** @this {google.maps.Polygon} */
+function showArrays(event) {
+
+  // Since this polygon has only one path, we can call getPath()
+  // to return the MVCArray of LatLngs.
+  var vertices = this.getPath();
+
+  // to bring up the modal.
+  var contentString = '<div class="box">' + '<img style="width:145px;" style="display:block; margin-right:10px; position:relative; float:left;" src="img/profiles/girl1.png">' + '<div style="width:130px; display:block; margin-right:40px; float:right; position:relative;">Emily S. <span style="font-size:14px;color:white;">(32)</span><br>' + '<a href="profile1.html"><button class="btn">View Profile</button></a><br>' + '<span style="font-size:12px;">"The way they make the drinks is amazing!"</span></div>' + '</div>' + '<div class="box">' + '<img style="width:145px;" style="display:block; margin-right:10px; position:relative; float:left;" src="img/profiles/girl2.png">' + '<div style="width:130px; display:block; margin-right:40px; float:right; position:relative;">Emily S. <span style="font-size:14px;color:white;">(32)</span><br>' + '<a href="profile2.html"><button class="btn">View Profile</button></a><br>' + '<span style="font-size:12px;">"The way they make the drinks is amazing!"</span></div>' + '</div>' + '<div class="box">' + '<img style="width:145px;" style="display:block; margin-right:10px; position:relative; float:left;" src="img/profiles/girl3.png">' + '<div style="width:130px; display:block; margin-right:40px; float:right; position:relative;">Emily S. <span style="font-size:14px;color:white;">(32)</span><br>' + '<a href="profile3.html"><button class="btn">View Profile</button></a><br>' + '<span style="font-size:12px;">"The way they make the drinks is amazing!"</span></div>' + '</div>' + '<div class="box">' + '<img style="width:145px;" style="display:block; margin-right:10px; position:relative; float:left;" src="img/profiles/girl4.png">' + '<div style="width:130px; display:block; margin-right:40px; float:right; position:relative;">Emily S. <span style="font-size:14px;color:white;">(32)</span><br>' + '<a href="profile4.html"><button class="btn">View Profile</button></a><br>' + '<span style="font-size:12px;">"The way they make the drinks is amazing!"</span></div>' + '</div>' + '<div class="box">' + '<img style="width:145px;" style="display:block; margin-right:10px; position:relative; float:left;" src="img/profiles/girl5.png">' + '<div style="width:130px; display:block; margin-right:40px; float:right; position:relative;">Emily S. <span style="font-size:14px;color:white;">(32)</span><br>' + '<a href="profile5.html"><button class="btn">View Profile</button></a><br>' + '<span style="font-size:12px;">"The way they make the drinks is amazing!"</span></div>' + '</div>';
+
+
+  // Replace the info window's content and position.
+  infoWindow.setContent(contentString);
+  infoWindow.setPosition(event.latLng);
+
+  infoWindow.open(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>

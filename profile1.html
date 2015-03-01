@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if IE 10]> <html class="ie10" lang="en"> <![endif]-->
+<!--[if (gt IE 10)|!(IE)]> <html lang="en"> <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="ico/favicon.png">
+
+    <title>Love Spot | Profile Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/magnific-popup.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/modernizr.custom.js"></script>
+  </head>
+
+  <body>
+
+    <div class="preloader">
+       <div class="spinner">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
+    </div>
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper cbp-af-header">
+      <div class="container">
+
+        <!-- Fixed navbar -->
+        <div class="navbar cbp-af-inner" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <h1><a class="navbar-brand scroll" href="#intro">Love Spot</a></h1>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav pull-right">
+                <li><a href="index.html">Home</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Hero Banner
+    ================================================== -->
+    <div id="intro">
+        <div class="item background-cover" style="background: url('img/bg-featuredapp1.png')">
+          <div class="container">
+            <div class="row">
+              <div class="carousel-caption-center colour-white">
+                <h1>Hi! I'm Emily S.</h1>
+                <h2>My Favorite Spots include The Conservatory of Flowers, The Masonic, and Chrissy Field.</h2>
+                <p>I love wine and cheese nights in the city!</p>
+                <p><a class="btn btn-lg btn-primary signup" href="#" role="button">Get In Touch</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="overlay-bg"></div>
+        </div>
+    </div>
+
+    <div id="login" class="overlay overlay-content">
+  
+      <button type="button" class="overlay-close">Close</button>
+      <section class="login-part">
+        <p class="login-overlay">
+          Log In
+        </p>
+        <form method="post">
+          <input class="form-control" type="email" name="u" placeholder="Email" required="required" />
+          <input class="form-control" type="password" name="p" placeholder="Password" required="required" />
+          <button type="submit" class="btn btn-primary btn-block btn-large">Log me in</button>
+          <a href="#" class="forgot-pw">Forgot password? We can help!</a>
+        </form>
+       </section>
+      
+    </div>
+
+    <div id="signup" class="overlay overlay-content">
+  
+      <button type="button" class="overlay-close">Close</button>
+      <section class="login-part">
+        <p class="login-overlay">
+          Make First Contact
+        </p>
+        <form method="post">
+          <input class="form-control" type="subject" name="subject" placeholder="Subject" required="required" />
+          <input style="height:190px;" class="form-control" type="message" name="message" placeholder="Write A Message" required="required" />
+          <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+        </form>
+       </section>
+      
+    </div>
+
+ 
+  
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/classie.js"></script>
+		<script src="js/cbpAnimatedHeader.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/scrollReveal.js"></script>
+    <script src="js/jquery.scrollTo.js" defer="defer"></script>
+    <script src="js/jquery.nav.js" defer="defer"></script>
+    <script src="js/imagesloaded.pkgd.min.js" defer="defer"></script>
+    <script src="js/isotope.min.js" defer="defer"></script>
+    <script src="js/jquery.magnific-popup.min.js" defer="defer"></script>
+    <script src="js/jqBootstrapValidation.js" defer="defer"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+
+      $(document).ready(function(){
+        isotope();
+        signupOverlay();
+        loginOverlay();
+      });
+
+    </script>
+
+  </body>
+</html>
